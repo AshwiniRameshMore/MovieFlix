@@ -1,0 +1,6 @@
+io.movieflix.api
+io.movieflix.api.controller
+io.movieflix.api.entity
+io.movieflix.api.exception
+io.movieflix.api.repository
+io.movieflix.api.service
