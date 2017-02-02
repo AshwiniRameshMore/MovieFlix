@@ -7,12 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="home.js"></script>
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
- </head>
+</head>
 
 <body>
 <nav class="navbar navbar-default navbar-fixed-top">
@@ -23,7 +19,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="logo navbar-brand" href="#">MovieFlix</a>
+            <a class="logo navbar-brand" href="#">MovieFliX</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
@@ -40,31 +36,33 @@
     <div class="form-group">
         <h5>Already a registered user?<a href="login.html">Sign in here</a></h5>
         <h1 id="heading">Signup here</h1>
-        <label for="name"><font color="red">*</font> First Name</label>
+        <label for="first_name"><font color="red">*</font> First Name</label>
         <br>
-        <input type="text" id="name" class="form-control">
+        <input type="text" id="first_name" class="form-control">
         <br>
-        <label for="name"><font color="red">*</font> Last Name</label>
+        <label for="last_name"><font color="red">*</font> Last Name</label>
         <br>
-        <input type="text" id="name" class="form-control">
+        <input type="text" id="last_name" class="form-control">
         <br>
-
         <label for="email"><font color="red">*</font> Email</label>
         <br>
-        <input type="email" id="name" class="form-control">
+        <input type="email" id="email" class="form-control">
         <br>
         <label for="password"><font color="red">*</font> Choose Password</label>
         <br>
-        <input type="password" id="name" class="form-control">
+        <input type="password" id="password" class="form-control">
         <br>
         <label for="confirm"><font color="red">*</font> Retype Password</label>
         <br>
-        <input type="password" id="name" class="form-control">
+        <input type="password" id="confirm" class="form-control">
         <br>
-        <div id="button-panel"><button id="signup">SIGNUP</button></div>
+        <div id="button-panel">
+            <button id="signup_btn" class="btn btn-danger">SIGNUP</button>
+        </div>
     </div>
 </div>
 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </body>
 
