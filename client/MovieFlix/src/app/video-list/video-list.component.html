@@ -1,0 +1,103 @@
+<div id="fix">
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand">MovieFliX</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a (click)="showAll()">Home</a></li>
+        <li><a (click)="showMovies()">Movies</a></li>
+        <li><a (click)="showSeries()">Series</a></li>
+        <li><a (click)="showTopMovies()">Top Rated Movies</a></li>
+        <li><a (click)="showTopSeries()">Top Rated Series</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a><span class="glyphicon glyphicon-user"></span> Welcome, {{username}}</a></li>
+        <li><a routerLink="/login"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <nav class=" sortbar navbar navbar-inverse">
+    <ul class=" nav navbar-nav">
+      <li>
+        <h5>Type:</h5></li>
+      <li>
+        <select id="type_select" #type class="form-control selcls" (change)="onFilter(type.value,year.value,genre.value,sort.value)" data-style="btn-danger">
+          <option value="null">All</option>
+          <option value="movie">Movie</option>
+          <option value="series">Series</option>
+        </select>
+      </li>
+      <li>
+        <h5>Year:</h5></li>
+      <li>
+        <select id="year_select" #year class="form-control selcls" (change)="onFilter(type.value,year.value,genre.value,sort.value)" data-style="btn-danger">
+          <option value="0" selected>All</option>
+          <option *ngFor="let val of createRange(2017)" [ngValue]="val">{{val}}</option>
+        </select>
+      </li>
+      <li>
+        <h5>Genre:</h5></li>
+      <li>
+        <select id="genre_select" #genre class="form-control selcls" (change)="onFilter(type.value,year.value,genre.value,sort.value)" data-style="btn-danger">
+          <option value="null" selected>All</option>
+          <option>Action</option>
+          <option>Adventure</option>
+          <option>Biography</option>
+          <option>Comedy</option>
+          <option>Crime</option>
+          <option>Drama</option>
+          <option>Fantasy</option>
+          <option>History</option>
+          <option>Mystery</option>
+          <option>Romance</option>
+          <option>Sci-Fi</option>
+          <option>Thriller</option>
+          <option>Western</option>
+        </select>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <form class="navbar-form navbar-left">
+          <div class="input-group">
+            <input type="text" id="search" class="form-control" placeholder="Search" #search_text>
+            <div class="input-group-btn">
+              <button id="search_icon" class="btn btn-default" type="submit" (click)="onSearch(search_text.value)">
+                <i class="glyphicon glyphicon-search"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </li>
+      <li>
+        <h5>Sort By:</h5></li>
+      <li>
+        <select id="sort_select" #sort class="form-control selcls" (change)="onFilter(type.value,year.value,genre.value,sort.value)" data-style="btn-danger">
+          <option value="year">Year</option>
+          <option value="imdbVotes">Votes</option>
+          <option value="imdbRating">Ratings</option>
+        </select>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<div id="display_dialog">
+  <table>
+    <tr *ngFor="let video of videoList">
+      <td>
+        <a [routerLink]="[video.videoId]"><img class="title_img" [src]="video.poster"></a>
+      </td>
+      <td>
+        <div class="title">{{video.title}}({{video.year}})</div>
+        <div class="rating"><span class="star_head glyphicon glyphicon-star"></span>{{video.imdbRating}}/10 <u>Metascore: </u>{{video.metaScore}}/100</div>
+        <div class="duration"><u>Duration: </u>{{video.runtime}} - {{video.genre}}</div>
+        <div class="plot">{{video.plot}}</div>
+        <div class="directors"><u>Directors: </u> {{video.director}}</div>
+        <div class="stars"><u>Stars: </u> {{video.actors}}</div>
+      </td>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,95 @@
+<div id="fix">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand">MovieFliX</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a routerLink="/add_title" *ngIf="showAdmin">Add Title</a></li>
+                <li><a routerLink="/edit_title" *ngIf="showAdmin">Edit Title</a></li>
+                <li><a (click)="showAll()" *ngIf="showUser">Home</a></li>
+                <li><a (click)="showMovies()" *ngIf="showUser">Movies</a></li>
+                <li><a (click)="showSeries()" *ngIf="showUser">Series</a></li>
+                <li><a (click)="showTopMovies()" *ngIf="showUser">Top Rated Movies</a></li>
+                <li><a (click)="showTopSeries()" *ngIf="showUser">Top Rated Series</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a><span class="glyphicon glyphicon-user"></span> Welcome, {{username}}</a></li>
+                <li><a routerLink="/login"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div id="detail_dialog">
+    <a *ngIf="showUser" [routerLink]="['../']" class="btn btn-danger">&lt; Back</a>
+    <a *ngIf="showAdmin" [routerLink]="['/edit_title']" class="btn btn-danger">&lt; Back</a>
+    <table class="disp_table">
+        <tr>
+            <td><img class="detailed_img" [src]="video.poster"></td>
+            <td>
+                <div class="detail_title">{{video.title}}<span id="year">({{video.year}})</span></div>
+                <span class="star_head glyphicon glyphicon-star"></span><span id="star_val">{{rating}}/10</span>
+                <br><u>Rate this</u>
+                <span class="star">
+                    <span><button class="hide_btn" (click)="rate(10,video.videoId)">☆</button></span>
+        <span><button class="hide_btn" (click)="rate(9,video.videoId)">☆</button></span>
+        <span><button class="hide_btn" (click)="rate(8,video.videoId)">☆</button></span>
+        <span><button class="hide_btn" (click)="rate(7,video.videoId)">☆</button></span>
+        <span><button class="hide_btn" (click)="rate(6,video.videoId)">☆</button></span>
+        <span><button class="hide_btn" (click)="rate(5,video.videoId)">☆</button></span>
+        <span><button class="hide_btn" (click)="rate(4,video.videoId)">☆</button></span>
+        <span><button class="hide_btn" (click)="rate(3,video.videoId)">☆</button></span>
+        <span><button class="hide_btn" (click)="rate(2,video.videoId)">☆</button></span>
+        <span><button class="hide_btn" (click)="rate(1,video.videoId)">☆</button></span>
+        </span>
+                <br>
+                <br>
+
+                <div><span class="rated">{{video.rated}}</span> | <span class="runtime">{{video.duration}}</span> | <span class="genre">{{video.genre}}</span> | <span class="release">{{video.released}}</span> (<span class="country">{{video.country}}</span>)</div>
+                <div class="metascore"><u>Metascore: </u>{{video.metaScore}}/100</div>
+                <div class="plot">{{video.plot}}</div>
+                <div class="directors"><u>Directors: </u> {{video.director}}</div>
+                <div class="writer"><u>Writer: </u> {{video.writer}}</div>
+                <div class="stars"><u>Stars: </u> {{video.actors}}</div>
+                <div class="awards"><u>Awards: </u>{{video.awards}}</div>
+                <div class="language"><u>Language: </u> {{video.language}}</div>
+                <div class="votes"><u>IMDB Votes: </u> {{video.imdbVotes}}</div>
+                <div class="imdb"><a href="http://www.imdb.com/title/{{video.imdbId}}/">Go to IMDB.com</a></div>
+
+            </td>
+            <td>
+                <div class="detailBox">
+                    <div class="titleBox">
+                        <label>User Reviews</label>
+                        <button type="button" class="close" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="actionBox">
+                        <ul class="commentList" *ngFor="let comment of commentList">
+                            <li>
+                                <div class="commenterImage">
+                                    <img src="http://placekitten.com/45/45" />
+                                </div>
+                                <div class="commentText">
+                                    <p class="">{{comment.comment}}</p> <span class="date sub-text">on {{comment.date}}</span>
+
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <form (ngSubmit)="addComment(comment.value,video.videoId)" novalidate #commentForm="ngForm">
+                        <div class="form-group" id="inline_comment">
+                            <input type="text" name="comment" id="comment" placeholder="Write a comment..." #comment required minlength="2" class="form-control">
+                            <div *ngIf="comment.errors && comment.dirty" class="errors">
+                                <p [hidden]="!comment.errors.required">Please enter the comment</p>
+                            </div>
+                            <button class="btn btn-danger" type="submit" [disabled]="commentForm.form.invalid">Add</button>
+                        </div>
+                    </form>
+                </div>
+            </td>
+
+        </tr>
+    </table>
+
+</div>
