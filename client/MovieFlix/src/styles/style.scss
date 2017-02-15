@@ -1,9 +1,9 @@
 @import 'vars';
 @import "core";
+
 body {
   font-family: $font;
   background: url(http://www.goliath.com/wp-content/uploads/2016/04/c.jpg);
-  //background: url(http://www.guidingweb.com/wp-content/uploads/2016/01/star-wars.jpg);
   background-attachment: fixed;
   background-size: cover;
   opacity: 0.8;
@@ -231,7 +231,7 @@ element.style {
 
 #upload_img {
   height: 350px;
-  background-color: grey;
+  background-color: $grey;
   width: 250px;
   margin-bottom: 10px;
 }
@@ -259,7 +259,7 @@ textarea {
 }
 
 #year {
-  color: grey;
+  color: $grey;
   font-size: 23px;
 }
 
@@ -313,7 +313,6 @@ label {
 th {
   color: $darkred;
 }
-
 
 .sub_label{
   height: 35px;
@@ -441,8 +440,6 @@ th {
   font-size: 20px;
 }
 
-
-
 .star > span:hover:before,
 .star > span:hover ~ span:before {
   content: "\2605";
@@ -458,7 +455,7 @@ th {
 }
 
 u {
-  color: grey;
+  color: $grey;
 }
 
 .sub-text {

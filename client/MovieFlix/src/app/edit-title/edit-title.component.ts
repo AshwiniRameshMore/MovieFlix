@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {VideoService} from '../video-service/video.service';
-import {FormGroup} from "@angular/forms";
 import {UserService} from "../user-service/user.service";
 
 @Component({
