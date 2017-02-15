@@ -5,6 +5,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +23,7 @@ import io.movieflix.api.service.VideoService;
  * @since 01-20-2017
  */
 @RestController
+@CrossOrigin(origins = "http://localhost:4000")
 @RequestMapping(value = "videos")
 public class VideoController {
 
@@ -131,5 +133,15 @@ public class VideoController {
 		LOGGER.log(Level.INFO, "Calling videoService - getImdbID method");
 		return videoService.getImdbID(title);
 	}
-
+	
+	/**
+	 * This method retrieves the video object
+	 * @param videoId Id of video
+	 * @return video object
+	 */
+	@RequestMapping(method = RequestMethod.GET, value = "id/{videoId}")
+	public Video getVideoByID(@PathVariable("videoId") String videoId){
+		LOGGER.log(Level.INFO, "Calling videoService - findByID method");
+		return videoService.findByID(videoId);
+	}
 }

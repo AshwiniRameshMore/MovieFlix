@@ -25,8 +25,6 @@ public class Rating {
 	private String ratingId;
 	private double rating;
 	@ManyToOne
-	private User user;
-	@ManyToOne
 	private Video video;
 	
 	public String getRatingId() {
@@ -44,15 +42,7 @@ public class Rating {
 	public void setRating(double rating) {
 		this.rating = rating;
 	}
-	
-	public User getUser() {
-		return user;
-	}
-	
-	public void setUser(User user) {
-		this.user = user;
-	}
-	
+		
 	public Video getVideo() {
 		return video;
 	}

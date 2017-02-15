@@ -40,21 +40,18 @@ public class CommentServiceImpl implements CommentService{
 	private UserService userService;
 	
 	/**
-	 * This method retrieves the video and user objects and
+	 * This method retrieves the video object and
 	 * calls the CommentRepository method to create the new Comment object
 	 * @param videoId ID of Video 
-	 * @param userId ID of User 
 	 * @param comment_str User comment
 	 * @return Comment object
 	 */
 	@Override
 	@Transactional
-	public Comment create(String videoId, String userId, String comment_str) {
+	public Comment create(String videoId, String comment_str) {
 		Video video = videoService.findByID(videoId);
-		User user = userService.findByID(userId);
 		Comment comment = new Comment();
 		comment.setVideo(video);
-		comment.setUser(user);
 		comment.setComment(comment_str);
 		LOGGER.log(Level.INFO, "Calling commentRepository - create method");
 		return commentRepository.create(comment);

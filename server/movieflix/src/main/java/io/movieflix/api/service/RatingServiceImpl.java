@@ -36,21 +36,18 @@ public class RatingServiceImpl implements RatingService{
 	private UserService userService;
 	
 	/**
-	 * This method retrieves the user and video objects and
+	 * This method retrieves the video object and
 	 * calls the RatingRepository method to create a new Rating object
 	 * @param videoId ID of Video
-	 * @param userId ID of User
 	 * @param rate Rating provided by user
 	 * @return Rating object
 	 */
 	@Override
 	@Transactional
-	public Rating create(String videoId, String userId, double rate) {
+	public Rating create(String videoId, double rate) {
 		Video video = videoService.findByID(videoId);
-		User user = userService.findByID(userId);
 		Rating rating = new Rating();
 		rating.setVideo(video);
-		rating.setUser(user);
 		rating.setRating(rate);
 		LOGGER.log(Level.INFO, "Calling ratingRepository - create method");
     	return ratingRepository.create(rating);

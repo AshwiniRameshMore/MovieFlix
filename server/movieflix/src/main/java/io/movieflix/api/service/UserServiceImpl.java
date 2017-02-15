@@ -50,19 +50,18 @@ public class UserServiceImpl implements UserService {
 	 * This method calls the UserRepository method to find the user by username and password
 	 * @param username username of the user
 	 * @param password password of the user
-	 * @return User object
+	 * @return true/false
 	 */
 	@Override
 	@Transactional(readOnly = true)
-	public User findUser(String username, String password) {
+	public Boolean findUser(String username, String password) {
 		LOGGER.log(Level.INFO, "Calling userRepository - findUser method");
 		User user = userRepository.findUser(username, password);
+		boolean exists = true;
 		if (user == null) {
-			LOGGER.log(Level.SEVERE, "Throws Exception - User not found");
-			throw new EntityNotFoundException("User not found");
+			exists = false;
 		}
-		LOGGER.log(Level.INFO, "RETURN {0}", user.toString());
-		return user;
+		return exists;
 	}
 
 	/**

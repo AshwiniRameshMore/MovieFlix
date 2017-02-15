@@ -4,6 +4,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +22,7 @@ import io.movieflix.api.service.UserService;
  * @since 01-20-2017
  */
 @RestController
+@CrossOrigin(origins = "http://localhost:4000")
 @RequestMapping(value = "users")
 public class UserController {
 	
@@ -44,10 +46,10 @@ public class UserController {
 	 * This method calls the UserService method to find the user by username and password
 	 * @param username username of the user
 	 * @param password password of the user
-	 * @return User object
+	 * @return true/false
 	 */
 	@RequestMapping(method = RequestMethod.GET,value={"{username}/{password}"})
-	public User findUser(@PathVariable("username") String username, @PathVariable("password") String password) {
+	public Boolean findUser(@PathVariable("username") String username, @PathVariable("password") String password) {
 		LOGGER.log(Level.INFO, "Calling userService - findUser method");
     	return userService.findUser(username, password);
 	}

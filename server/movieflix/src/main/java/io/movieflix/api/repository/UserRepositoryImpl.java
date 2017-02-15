@@ -91,5 +91,5 @@ public class UserRepositoryImpl implements UserRepository{
 		LOGGER.log(Level.INFO, "User with ID: {0} found", userId);
 		return em.find(User.class, userId);
 	}
-
+	
 }

@@ -13,7 +13,7 @@ import io.movieflix.api.entity.Comment;
  */
 public interface CommentService {
 
-	Comment create(String videoId, String userId, String comment_str);
+	Comment create(String videoId, String userId);
 
 	Comment update(String commentId, String comment_str);
 
