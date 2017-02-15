@@ -1,28 +1,28 @@
 <nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand">MovieFliX</a>
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand">MovieFliX</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a routerLink="/add_title" >Add Title</a></li>
+          <li><a routerLink="/edit_title" >Edit Title</a></li>
+         </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a><span class="glyphicon glyphicon-user"></span>Welcome, {{username}}</a></li>
+          <li><a routerLink="/login" routerLinkActive="active"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+        </ul>
     </div>
-    <ul class="nav navbar-nav">
-      <li><a routerLink="/add_title">Add Title</a></li>
-      <li><a routerLink="/edit_title">Edit Title</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a><span class="glyphicon glyphicon-user"></span>Welcome, {{username}}</a></li>
-      <li><a routerLink="/login" routerLinkActive="active"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
-    </ul>
-  </div>
 </nav>
 <div id="create_dialog">
   <h2 id="heading">Add a New Title</h2>
   <form (ngSubmit)="addVideo(inputTitle.value,year.value,rated.value,inputReleased.value,inputRuntime.value,genre.value,inputDirector.value,
  inputWriter.value,inputActor.value,inputPlot.value,language.value,country.value,inputAward.value,image.value,inputMetascore.value,
- inputRating.value,inputVotes.value,inputId.value)" novalidate #videoForm="ngForm">
+ inputRating.value,inputVotes.value,inputId.value);this.re" novalidate #videoForm="ngForm">
 
     <table>
       <tr>
@@ -63,8 +63,7 @@
                 </label>
                 <label [class.selected]="r2.checked">
                   <input #r2 type="radio" name="r" value="Series" (change)="clickRadio(r2)"> Series
-                </label>
-              </td>
+                </label>    </td>
             </tr>
             <tr>
               <td>
@@ -107,7 +106,7 @@
               </td>
               <td>
                 <div class="form-group">
-                  <input type="text" name="actors" id="actors" #inputActor="ngModel" [(ngModel)]="video.actors" minlength="3" class="form-control">
+                  <input type="text" name="actors" id="actors" #inputActor="ngModel" [(ngModel)]="video.actors"  minlength="3" class="form-control">
                   <div *ngIf="inputActor.errors && inputActor.dirty" class="errors">
                     <p [hidden]="!inputActor.errors.minlength">Actor must have at least 3 characters</p>
                   </div>
@@ -120,7 +119,7 @@
               </td>
               <td>
                 <div class="form-group">
-                  <input type="text" name="writer" id="writer" #inputWriter="ngModel" [(ngModel)]="video.writer" minlength="3" class="form-control">
+                  <input type="text" name="writer" id="writer" #inputWriter="ngModel" [(ngModel)]="video.writer"  minlength="3" class="form-control">
                   <div *ngIf="inputWriter.errors && inputWriter.dirty" class="errors">
                     <p [hidden]="!inputWriter.errors.minlength">Writer must have at least 3 characters</p>
                   </div>
@@ -133,9 +132,9 @@
               </td>
               <td>
                 <div class="form-group">
-                  <textarea name="plot" id="plot" rows="3" #inputPlot="ngModel" [(ngModel)]="video.plot" minlength="10" class="form-control"></textarea>
+                  <textarea name="plot" id="plot" rows="3" #inputPlot="ngModel" [(ngModel)]="video.plot"  minlength="10" class="form-control"></textarea>
                   <div *ngIf="inputPlot.errors && inputPlot.dirty" class="errors">
-                    <p [hidden]="!inputPlot.errors.minlength">Plot must have at least 10 characters</p>
+                     <p [hidden]="!inputPlot.errors.minlength">Plot must have at least 10 characters</p>
                   </div>
                 </div>
               </td>
@@ -161,7 +160,7 @@
               <td>
                 <div class="form-group">
                   <input type="date" name="released" id="released" #inputReleased="ngModel" [(ngModel)]="video.released" class="form-control">
-                </div>
+                 </div>
               </td>
             </tr>
           </table>
@@ -173,8 +172,8 @@
                 <label for="year">Year</label>
               </td>
               <td>
-                <select id="year" #year class="form-control selcls" data-live-search="true" title="Choose year" data-style="btn-danger">
-                  <option *ngFor="let val of createRange(2017)" [ngValue]="val">{{val}}</option>
+                 <select id="year" #year class="form-control selcls" data-live-search="true" title="Choose year" data-style="btn-danger" >
+                   <option *ngFor="let val of createRange(2017)" [ngValue]="val">{{val}}</option>
                 </select>
               </td>
             </tr>
@@ -186,7 +185,7 @@
               <td>
                 <div class="form-group">
                   <input type="text" name="runtime" id="runtime" placeholder="in minutes" #inputRuntime="ngModel" [(ngModel)]="video.runtime" class="form-control">
-                </div>
+                 </div>
               </td>
             </tr>
             <tr>
@@ -195,7 +194,7 @@
               </td>
               <td>
                 <div class="form-group">
-                  <textarea name="award" id="award" rows="3" #inputAward="ngModel" [(ngModel)]="video.awards" minlength="10" class="form-control"></textarea>
+                  <textarea name="award" id="award" rows="3" #inputAward="ngModel" [(ngModel)]="video.awards"  minlength="10" class="form-control"></textarea>
                   <div *ngIf="inputAward.errors && inputAward.dirty" class="errors">
                     <p [hidden]="!inputAward.errors.minlength">Awards must have at least 10 characters</p>
                   </div>
@@ -547,7 +546,7 @@
               </td>
               <td>
                 <div class="form-group">
-                  <input type="number" name="metascore" id="metascore" min="0" max="100" step="1" #inputMetascore="ngModel" [(ngModel)]="video.metaScore" class="form-control">
+                  <input type="number" name="metascore" id="metascore" min="0" max="100" step="1" #inputMetascore="ngModel" [(ngModel)]="video.metaScore"  class="form-control">
                 </div>
               </td>
             </tr>
@@ -557,7 +556,7 @@
               </td>
               <td>
                 <div class="form-group">
-                  <input type="text" name="imdbId" id="imdbId" placeholder="ttXXXXXX" pattern="^tt\d{7}$" #inputId="ngModel" [(ngModel)]="video.imdbId" class="form-control">
+                  <input type="text" name="imdbId" id="imdbId" placeholder="ttXXXXXX" pattern="^tt\d{7}$" #inputId="ngModel" [(ngModel)]="video.imdbId"  class="form-control">
                   <div *ngIf="inputId.errors && inputId.dirty" class="errors">
                     <p [hidden]="!inputId.errors.pattern">Please enter the valid ID</p>
                   </div>
@@ -570,7 +569,7 @@
               </td>
               <td>
                 <div class="form-group">
-                  <input type="number" name="imdbrating" id="imdbrating" min="0" max="10" step="0.1" #inputRating="ngModel" [(ngModel)]="video.imdbRating" class="form-control">
+                  <input type="number" name="imdbrating" id="imdbrating" min="0" max="10" step="0.1" #inputRating="ngModel" [(ngModel)]="video.imdbRating"  class="form-control">
                 </div>
               </td>
             </tr>
@@ -580,7 +579,7 @@
               </td>
               <td>
                 <div class="form-group">
-                  <input type="text" name="imdbvotes" id="imdbvotes" #inputVotes="ngModel" [(ngModel)]="video.imdbVotes" class="form-control">
+                  <input type="text" name="imdbvotes" id="imdbvotes" #inputVotes="ngModel" [(ngModel)]="video.imdbVotes"  class="form-control">
                 </div>
               </td>
             </tr>

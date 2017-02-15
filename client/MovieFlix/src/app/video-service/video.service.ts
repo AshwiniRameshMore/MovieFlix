@@ -105,10 +105,10 @@ export class VideoService {
           .catch(error => Observable.throw(error.statusText));
   }
 
-  rate(videoId: string, userId: string, star: string) : Observable<any[]> {
+  rate(videoId: string, star: string) : Observable<any[]> {
       let headers = new Headers({ 'Content-Type': 'application/json' });
       let options = new RequestOptions({ headers: headers });
-      return this.http.post(`http://localhost:8080/movieflix/api/ratings/${videoId}/${userId}/rating=${star}`, options)
+      return this.http.post(`http://localhost:8080/movieflix/api/ratings/${videoId}/rating=${star}`, options)
           .map(response => response.json())
           .catch(error => Observable.throw(error.statusText));
   }

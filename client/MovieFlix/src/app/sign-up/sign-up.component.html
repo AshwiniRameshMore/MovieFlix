@@ -21,7 +21,7 @@
 
 <div id="signup_dialog">
     <div class="form-group">
-        <h4>Already a registered user?<a routerLink="/login">Sign in here</a></h4>
+        <h5>Already a registered user?<a routerLink="/login">Sign in here</a></h5>
         <h1 id="heading">Signup here</h1>
         <form (ngSubmit)="onSignup(first_name.value,last_name.value,email.value,password.value,confirm.value)" novalidate #userForm="ngForm">
             <div class="form-group">

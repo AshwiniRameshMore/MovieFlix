@@ -26,7 +26,7 @@
             <th>Remove</th>
         </tr>
         <tr *ngFor="let video of videoList">
-            <td><a class="title_link" [routerLink]="['../video_list/video.videoId']">{{video.title}}</a></td>
+            <td><a class="title_link" [routerLink]="[video.videoId]">{{video.title}}</a></td>
             <td><a [routerLink]="[video.videoId]"><span class="edit glyphicon glyphicon-edit"></span></a></td>
             <td><a (click)="delete([video.title])"><span class="remove glyphicon glyphicon-remove"></span></a></td>
         </tr>
