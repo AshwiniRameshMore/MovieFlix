@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {Router} from '@angular/router';
+import {ActivatedRoute,Router} from '@angular/router';
 import {UserService} from '../user-service/user.service';
 import {VideoService} from '../video-service/video.service';
 
@@ -11,7 +11,7 @@ export class RemoveTitleComponent {
     video: any =[];
     username:string = "";
 
-    constructor(private videoService: VideoService, private router:Router,private userService:UserService) {
+    constructor(private route: ActivatedRoute, private videoService: VideoService, private router:Router,private userService:UserService) {
         if(userService.isAdmin()== "no"){
             this.router.navigate(['/login']);
         }
