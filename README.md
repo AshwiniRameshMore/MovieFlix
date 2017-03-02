@@ -1,5 +1,4 @@
-# movieflix-seed
-seed for the Full-Stack training project: movieflix
+This is a website similar to MovieFlix where user can - view the catalog of movies and TV series, rate a movie, and provide reviews about the movie to other users
 
 ## directory structure:
 
