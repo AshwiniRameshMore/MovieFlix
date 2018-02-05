@@ -11,7 +11,7 @@ import io.movieflix.api.entity.Rating;
  */
 public interface RatingService {
 
-	Rating create(String videoId, String userId, double rate);
+	Rating create(String videoId, double rate);
 
 	Rating update(String ratingId, double rate);
 

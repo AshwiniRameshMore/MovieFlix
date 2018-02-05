@@ -20,15 +20,13 @@ import javax.persistence.NamedQuery;
  */
 @Entity
 @NamedQueries({
-		@NamedQuery(name = "Comment.findAllComments",query = "SELECT c from Comment c INNER JOIN c.video v WHERE v.videoId = :cid")
+		@NamedQuery(name = "Comment.findAllComments",query = "SELECT c from Comment c INNER JOIN c.video v WHERE v.videoId = :cid ORDER BY c.date DESC")
 })
 public class Comment {
 	
 	@Id
 	private String commentId;
 	private String comment;
-	@ManyToOne
-    private User user;
 	@ManyToOne
     private Video video;
 	private String date;
@@ -47,14 +45,6 @@ public class Comment {
 
 	public void setComment(String comment) {
 		this.comment = comment;
-	}
-
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
 	}
 
 	public Video getVideo() {

@@ -5,6 +5,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,6 +22,7 @@ import io.movieflix.api.service.CommentService;
  * @since 01-20-2017
  */
 @RestController
+@CrossOrigin(origins = "http://localhost:4000")
 @RequestMapping(value = "comments")
 public class CommentController {
 	
@@ -32,14 +34,13 @@ public class CommentController {
 	/**
 	 * This method calls the CommentService method to create the new Comment object
 	 * @param videoId ID of Video 
-	 * @param userId ID of User 
 	 * @param comment_str User comment
 	 * @return Comment object
 	 */
-	@RequestMapping(method = RequestMethod.POST, value="{videoId}/{userId}/comment={comment_str}")
-	public Comment create(@PathVariable("videoId") String videoId, @PathVariable("userId") String userId, @PathVariable("comment_str") String comment_str){
+	@RequestMapping(method = RequestMethod.POST, value="{videoId}/comment={comment_str}")
+	public Comment create(@PathVariable("videoId") String videoId, @PathVariable("comment_str") String comment_str){
 		LOGGER.log(Level.INFO, "Calling commentService - Create method");
-		return commentService.create(videoId, userId, comment_str);
+		return commentService.create(videoId, comment_str);
 	}
 	
 	/**

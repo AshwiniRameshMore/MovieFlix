@@ -1,0 +1,471 @@
+@import 'vars';
+@import "core";
+
+body {
+  font-family: $font;
+  background: url(http://www.goliath.com/wp-content/uploads/2016/04/c.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  opacity: 0.8;
+  width: 100%;
+  color: $white;
+}
+
+.titleBox {
+  background-color: $darkred;
+  padding: 10px;
+  label {
+    margin: 0;
+    display: inline-block;
+  }
+}
+
+.actionBox {
+  max-height: 300px;
+  max-width: 500px;
+  overflow-y: scroll;
+  border-top: 1px dotted $darkred;
+  padding: 10px;
+  .form-group:first-child {
+    width: 80%;
+  }
+  .form-group:nth-child(2) {
+    width: 18%;
+  }
+  .form-group * {
+    width: 100%;
+  }
+}
+
+.commenterImage {
+  width: 30px;
+  margin-right: 5px;
+  height: 100%;
+  float: left;
+  img {
+    width: 100%;
+    border-radius: 50%;
+  }
+}
+
+.commentList {
+  padding: 0;
+  list-style: none;
+  max-height: 200px;
+  overflow: auto;
+  li {
+    margin: 0;
+    margin-top: 10px;
+    div {
+      display: table-cell;
+    }
+  }
+}
+
+.edit {
+  color: $white;
+  &:hover {
+    color: $darkred;
+  }
+}
+
+.remove {
+  color: $darkred;
+  &:hover {
+    color: white;
+  }
+}
+.navbar-right{
+  margin-right: 0px;
+}
+.title_link {
+  color: white;
+  &:hover {
+    color: white;
+  }
+}
+
+#create_dialog {
+  background: $black;
+  opacity: 1;
+  border: $redborder;
+  width: auto;
+  padding: 2% 4%;
+  margin-top: 100px;
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  textarea {
+    margin-bottom: -10px;
+  }
+  label {
+    width: 90px;
+  }
+  #save_btn,
+  #clear_btn {
+    width: 100px;
+    margin: 20px;
+  }
+  input[type=text],
+  input[type=number] {
+    height: 35px;
+  }
+  #year,
+  #language {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 35px;
+  }
+  #year {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    height: 35px;
+    font-size: 15px;
+  }
+  #country {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    height: 35px;
+  }
+  #genre,
+  #rated {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    height: 35px;
+  }
+}
+
+.star {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  color: gold;
+  font-size: 20px;
+  span {
+    display: inline-block;
+    position: relative;
+    width: 1.1em;
+  }
+}
+.navbar {
+  margin-bottom: 0;
+  background-color: $darkred;
+  border: 0;
+  font-size: 14px;
+  letter-spacing: 2px;
+  opacity: 0.9;
+  li a{
+    color: $white;
+  }
+  .navbar-brand{
+    color: $white;
+    font-size: 30px;
+    font-weight: bold;
+  }
+}
+.container {
+  padding: 80px 120px;
+}
+
+.carousel-inner img {
+  -webkit-filter: grayscale(90%);
+  filter: grayscale(90%);
+  width: 100%;
+  margin: auto;
+}
+
+.image h2 {
+  background-color: $white;
+  border: $blackborder;
+  color: $darkred;
+  position: absolute;
+  top: 200px;
+  left: 100px;
+  width: auto;
+  font-size: 60px;
+  font-weight: bold
+}
+
+.nav-tabs li a {
+  color: white;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+.navbar-default .navbar-brand {
+  color: $white !important;
+}
+
+element.style {
+  height: 150px;
+}
+
+.navbar-nav>li>a {
+  color: white !important;
+}
+.image {
+  position: relative;
+  width: 100%;
+}
+
+.title {
+  color: $darkred;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.container-fluid {
+  padding-top: 10px;
+}
+
+.title_img {
+  width: 220px;
+  height: 200px;
+}
+
+.form-group {
+  width: 250px;
+}
+
+#upload_img {
+  height: 350px;
+  background-color: $grey;
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+h5 {
+  margin-top: 20px;
+  margin-left: 5px;
+}
+
+#heading {
+  color: $darkred;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+#top_header {
+  color: $darkred;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+input[type=text],
+textarea {
+  width: 250px;
+}
+
+#year {
+  color: $grey;
+  font-size: 23px;
+}
+
+#type_select,#genre_select,#year_select,#sort_select {
+  margin: 10px 5px 10px 4px;
+  width: 100px;
+}
+
+label {
+  width: 200px;
+  margin-left: 10px;
+}
+
+#search {
+  width: 200px;
+  height: 32.5px;
+  margin-top: 2px;
+}
+
+#search_icon {
+  margin-top: 2px;
+}
+
+.button-panel {
+  text-align: center;
+}
+
+.err_msg {
+  color: $red;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.sortbar {
+  min-height: 20px;
+  margin-bottom: -10px;
+  margin-top: 10px;
+  letter-spacing: 0px;
+}
+
+#fix {
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+  background: inherit;
+}
+
+th {
+  color: $darkred;
+}
+
+.sub_label{
+  height: 35px;
+  width: 250px !important;
+  margin-top: 10px;
+  font-weight: bold;
+  color: $red;
+  font-size: 20px;
+}
+#signup_btn {
+  font-weight: bold;
+  width: 150px;
+  font-size: 120%;
+  margin-top: 20px;
+}
+
+.detailed_img {
+  width: 350px;
+  height: 400px;
+}
+
+#signup_dialog {
+  background: $black;
+  opacity: 1;
+  border: $redborder;
+  width: auto;
+  padding: 3% 10%;
+  margin-top: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#admin_home_dialog {
+  width: 100%;
+  z-index: 5;
+  overflow: auto;
+  position: relative;
+  top: 175px;
+  background: $black;
+  padding: 0% 3% 0% 3%;
+}
+
+#display_dialog {
+  background: $black;
+  opacity: 1;
+  border: $blackborder;
+  width: 100%;
+  padding: 2% 4%;
+  position: absolute;
+  top: 114px;
+  left: 0%;
+}
+
+#detail_dialog {
+  background: $black;
+  opacity: 1;
+  border: $blackborder;
+  width: 100%;
+  padding: 2% 4%;
+  position: absolute;
+  top: 100px;
+  left: 0%;
+  }
+
+#title_edit {
+  width: auto;
+}
+
+#login_dialog {
+  background: $black;
+  opacity: 1;
+  border: $redborder;
+  width: auto;
+  padding: 3% 10%;
+  margin-top: 100px;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#modify_dialog {
+  background: black;
+  opacity: 1;
+  border: $redborder;
+  padding: 1% 3% 0% 3%;
+  width: 500px;
+  margin: 30px auto;
+}
+
+#remove_dialog {
+  background: black;
+  opacity: 1;
+  border: $redborder;
+  padding: 1% 3% 0% 3%;
+  width: 500px;
+  margin: 30px auto;
+}
+
+.detailBox {
+  width: 320px;
+  border: $redborder;
+}
+
+.detail_title {
+  color: $darkred;
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.star_head {
+  color: gold;
+  font-size: 24px;
+}
+
+#user_star {
+  font-size: 20px;
+}
+
+#star_val {
+  color: gold;
+  font-size: 20px;
+}
+
+.star > span:hover:before,
+.star > span:hover ~ span:before {
+  content: "\2605";
+  position: absolute;
+}
+
+.commentText p {
+  margin: 0;
+}
+
+.disp_table td {
+  padding: 10px;
+}
+
+u {
+  color: $grey;
+}
+
+.sub-text {
+  color: $white;
+  font-size: 11px;
+}
+
+.hide_btn {
+  background-color: transparent;
+  border: transparent;
+  padding-left: -12px;
+}
+

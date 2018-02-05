@@ -2,13 +2,12 @@ package io.movieflix.api.controller;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
 import io.movieflix.api.entity.Rating;
 import io.movieflix.api.service.RatingService;
 
@@ -20,6 +19,7 @@ import io.movieflix.api.service.RatingService;
  * @since 01-20-2017
  */
 @RestController
+@CrossOrigin(origins = "http://localhost:4000")
 @RequestMapping(value = "ratings")
 public class RatingController {
 	
@@ -31,14 +31,13 @@ public class RatingController {
 	/**
 	 * This method calls the RatingService method to create a new Rating object
 	 * @param videoId ID of Video
-	 * @param userId ID of User
 	 * @param rate Rating provided by user
 	 * @return Rating object
 	 */
-	@RequestMapping(method = RequestMethod.POST, value="{videoId}/{userId}/rating={rate}")
-	public Rating create(@PathVariable("videoId") String videoId, @PathVariable("userId") String userId, @PathVariable("rate") double rate){
+	@RequestMapping(method = RequestMethod.POST, value="{videoId}/rating={rate}")
+	public Rating create(@PathVariable("videoId") String videoId, @PathVariable("rate") double rate){
 		LOGGER.log(Level.INFO, "Calling ratingService - Create method");
-		return ratingService.create(videoId, userId, rate);
+		return ratingService.create(videoId, rate);
 	}
 		
 	/**
@@ -71,7 +70,9 @@ public class RatingController {
 	@RequestMapping(method = RequestMethod.GET, value="{videoId}")
 	public double findAvgRatings(@PathVariable("videoId") String videoId){
 		LOGGER.log(Level.INFO, "Calling ratingService - findAvgRatings method");
-		return ratingService.findAvgRatings(videoId);
+		int scale = (int) Math.pow(10, 1);
+	    return (double) Math.round(ratingService.findAvgRatings(videoId) * scale) / scale;
+	    
 	}
 
 }
