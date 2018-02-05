@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>MovieFlix - Details</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.9.3/css/bootstrap-select.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+
+<body>
+<div id="fix">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">MovieFliX</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Movies</a></li>
+                <li><a href="#">Series</a></li>
+                <li><a href="#">Top Rated Movies</a></li>
+                <li><a href="#">Top Rated Series</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Welcome, User</a></li>
+                <li><a href="home.html"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div id="display_dialog">
+    <table class="disp_table">
+        <tr>
+            <td><img class="detailed_img" src="http://ia.media-imdb.com/images/M/MV5BOTAzODEzNDAzMl5BMl5BanBnXkFtZTgwMDU1MTgzNzE@._V1_SX300.jpg"></td>
+            <td>
+                <div class="detail_title"> Star Wars: The Force Awakens<span id="year">(2017)</span></div>
+                <span class="star_head glyphicon glyphicon-star"></span><span id="star_val">7/10</span><span id="user_star">|&nbsp;&nbsp;&nbsp;&nbsp;<u>Rate this</u></span>
+                <span class="star">
+              <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+          </span>
+                <br>
+                <br>
+
+                <div><span class="rated">R</span> | <span class="runtime">49 min</span> | <span class="genre">Animation , Comedy</span> | <span class="release">20 January 2017</span> (<span class="country">USA</span>)</div>
+                <div class="metascore"><u>Metascore: </u>48/100</div>
+                <div class="plot">When Tony Stark and Bruce Banner try to jump-start a dormant peacekeeping program called Ultron, things go horribly wrong and it's up to Earth's Mightiest Heroes to stop the villainous Ultron from enacting his terrible plans.</div>
+                <div class="directors"><u>Directors: </u> Joss Whedon</div>
+                <div class="writer"><u>Writer: </u> Stan Lee (Marvel comics), Jack Kirby (Marvel comics)</div>
+                <div class="stars"><u>Stars: </u> Robert Downey Jr., Chris Hemsworth, Mark Ruffalo, Chris Evans</div>
+                <div class="awards"><u>Awards: </u>1 win & 12 nominations.</div>
+                <div class="language"><u>Language: </u> English</div>
+                <div class="votes"><u>IMDB Votes: </u> 370909</div>
+                <div class="imdb"><a href="http://www.imdb.com/title/tt0108052/">Go to IMDB.com</a></div>
+
+            </td>
+            <td>
+                <div class="detailBox">
+                    <div class="titleBox">
+                        <label>User Reviews</label>
+                        <button type="button" class="close" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="actionBox">
+                        <ul class="commentList">
+                            <li>
+                                <div class="commenterImage">
+                                    <img src="http://placekitten.com/45/45" />
+                                </div>
+                                <div class="commentText">
+                                    <p class="">Nice movie.</p> <span class="date sub-text">on March 15th, 2016</span>
+
+                                </div>
+                            </li>
+                            <li>
+                                <div class="commenterImage">
+                                    <img src="http://placekitten.com/45/45" />
+                                </div>
+                                <div class="commentText">
+                                    <p class="">One-time watch.</p> <span class="date sub-text">on May 5th, 2016</span>
+
+                                </div>
+                            </li>
+                            <li>
+                                <div class="commenterImage">
+                                    <img src="http://placekitten.com/45/45" />
+                                </div>
+                                <div class="commentText">
+                                    <p class="">Awesome.</p> <span class="date sub-text">on January 5th, 2017</span>
+
+                                </div>
+                            </li>
+                        </ul>
+                        <form class="form-inline" role="form">
+                            <div class="form-group">
+                                <input class="form-control" type="text" placeholder="Write a comment..." />
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-danger">Add</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </td>
+
+        </tr>
+    </table>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.9.3/js/bootstrap-select.min.js"></script>
+
+</body>
+
+</html>

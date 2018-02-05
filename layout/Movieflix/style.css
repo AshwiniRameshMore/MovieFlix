@@ -1,0 +1,81 @@
+body {
+    font-family: "Times New Roman", Georgia, Serif;
+    background-color: grey;
+}
+
+.container {
+    padding: 80px 120px;
+}
+
+.logo {
+    color: red;
+    font-weight: bold;
+}
+
+.carousel-inner img {
+    -webkit-filter: grayscale(90%);
+    filter: grayscale(90%);
+    width: 100%;
+    margin: auto;
+}
+
+.image h2 {
+    background-color: #FFFFFF;
+    border: 3px solid black;
+    color: darkred;
+    position: absolute;
+    top: 200px;
+    left: 100px;
+    width: auto;
+    font-size: 60px;
+    font-weight: bold
+}
+
+.nav-tabs li a {
+    color: white;
+}
+
+.navbar {
+    margin-bottom: 0;
+    background-color: darkred;
+    border: 0;
+    font-size: 14px;
+    letter-spacing: 2px;
+    opacity: 0.9;
+}
+
+.navbar-brand {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.navbar li a,
+.navbar .navbar-brand {
+    color: white;
+}
+
+.navbar-nav li a:hover {
+    color: black;
+}
+
+.navbar-nav li.active a {
+    color: #fff;
+    background-color: white;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: white;
+}
+
+element.style {
+    height: 150px;
+}
+
+.navbar-nav>li>a {
+    color: white !important;
+}
+
+.image {
+    position: relative;
+    width: 100%;
+}
